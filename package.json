@@ -1,5 +1,5 @@
 {
-  "name": "stepwise",
+  "name": "ngx-stepwise",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -12,7 +12,6 @@
     "rollup:umd": "rollup build/stepwise.module.js -o dist/stepwise.module.umd.js --format umd --name ngxStepwise",
     "start": "ng serve --open --port 3002"
   },
-  "private": true,
   "devDependencies": {
     "@angular/cli": "1.0.0",
     "@angular/common": "2.4.0",
