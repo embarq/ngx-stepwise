@@ -92,11 +92,15 @@ The main functionality belongs to only 4 directives: `stepwise-container`, `step
 
 Those should be nested in the following order: `container` > `step` > `next`/`prev`
 
-`stepwise-container` and `stepwise-step` directives have no input/output properties, you can attach it to any html element.
+You can attach `stepwise-container` and `stepwise-step` to any html element.
 
-On the other hand, both `stepwiseNext` and `stepwisePrev` have optional input property which may be usefull for disabling  controls. Preferably those should be used for main html controls such as `buttons`.
+`stepwise-container` directive has `pageChange` output property that emits current page.
+
+Both `stepwiseNext` and `stepwisePrev` have optional input property which may be usefull for disabling  controls. Preferably those should be used for main html controls such as `buttons`.
 
 ## Example
+
+`app.component.html`:
 
 ```html
 <div stepwise-container>
@@ -119,6 +123,31 @@ On the other hand, both `stepwiseNext` and `stepwisePrev` have optional input pr
   </div>
 
 </div>
+```
+
+`app.component.ts`:
+
+
+```ts
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class AppComponent implements OnInit {
+  public currentPage: number;
+
+  public ngOnInit() {
+    this.currentPage = 0;
+  }
+
+  public handlePageChange(page) {
+    this.currentPage = page;
+  }
+}
 ```
 
 ## Built with
