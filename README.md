@@ -19,9 +19,7 @@ npm install ngx-stepwise --save
 
 ## Setup
 
-### angular-seed
-
-[direct link](https://github.com/mgechev/angular-seed)
+### [Angular-seed](https://github.com/mgechev/angular-seed)
 
 ```js
 /**
@@ -103,7 +101,9 @@ Both `stepwiseNext` and `stepwisePrev` have optional input property which may be
 `app.component.html`:
 
 ```html
-<div stepwise-container>
+<div stepwise-container (pageChange)="handlePageChange($event)">
+
+  <h2>Current page: {{ currentPage }}</h2>
 
   <div stepwise-step>
     <h1>Step 1</h1>
