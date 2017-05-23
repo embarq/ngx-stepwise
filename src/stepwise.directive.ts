@@ -5,7 +5,8 @@ import {
   Directive,
   QueryList
 } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/merge';
 
 import { PageChange } from './stepwise-control.abstract';
 import { StepwiseStepDirective } from './stepwise-step.directive';

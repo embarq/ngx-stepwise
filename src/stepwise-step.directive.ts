@@ -7,7 +7,8 @@ import {
   EventEmitter,
   HostBinding
 } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/merge';
 
 import { PageChange } from './stepwise-control.abstract';
 import { StepwiseNextDirective } from './stepwise-next.directive';
