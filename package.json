@@ -1,6 +1,6 @@
 {
   "name": "ngx-stepwise",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "license": "MIT",
   "module": "dist/ngx-stepwise.js",
   "main": "dist/ngx-stepwise.umd.js",
