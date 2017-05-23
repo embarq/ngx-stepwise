@@ -6,6 +6,11 @@ import { StepwiseStepDirective } from './stepwise-step.directive';
 import { StepwiseNextDirective } from './stepwise-next.directive';
 import { StepwisePrevDirective } from './stepwise-prev.directive';
 
+export { StepwiseDirective } from './stepwise.directive';
+export { StepwiseStepDirective } from './stepwise-step.directive';
+export { StepwiseNextDirective } from './stepwise-next.directive';
+export { StepwisePrevDirective } from './stepwise-prev.directive';
+
 export const enum PageChange { Prev = -1, Next = 1 }
 
 export const directives = [
