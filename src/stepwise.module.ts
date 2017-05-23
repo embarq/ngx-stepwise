@@ -6,23 +6,26 @@ import { StepwiseStepDirective } from './stepwise-step.directive';
 import { StepwiseNextDirective } from './stepwise-next.directive';
 import { StepwisePrevDirective } from './stepwise-prev.directive';
 
-export { StepwiseDirective } from './stepwise.directive';
-export { StepwiseStepDirective } from './stepwise-step.directive';
-export { StepwiseNextDirective } from './stepwise-next.directive';
-export { StepwisePrevDirective } from './stepwise-prev.directive';
+export * from './stepwise.directive';
+export * from './stepwise-step.directive';
+export * from './stepwise-next.directive';
+export * from './stepwise-prev.directive';
 
 export const enum PageChange { Prev = -1, Next = 1 }
 
-export const directives = [
-  StepwiseDirective,
-  StepwiseStepDirective,
-  StepwiseNextDirective,
-  StepwisePrevDirective
-];
-
 @NgModule({
   imports: [ CommonModule ],
-  declarations: [ ...directives ],
-  exports: [ CommonModule, ...directives ]
+  declarations: [
+    StepwiseDirective,
+    StepwiseStepDirective,
+    StepwiseNextDirective,
+    StepwisePrevDirective
+  ],
+  exports: [
+    StepwiseDirective,
+    StepwiseStepDirective,
+    StepwiseNextDirective,
+    StepwisePrevDirective
+  ]
 })
 export class StepwiseModule { }

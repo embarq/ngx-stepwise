@@ -12,7 +12,12 @@
     "outDir": "./build"
   },
   "files": [
-    "./src/stepwise.module.ts"
+    "./src/stepwise.module.ts",
+    "./src/stepwise-next.directive.ts",
+    "./src/stepwise-prev.directive.ts",
+    "./src/stepwise-step.directive.ts",
+    "./src/stepwise-control.abstract.ts",
+    "./src/stepwise.directive.ts"
   ],
   "angularCompilerOptions": {
     "skipMetadataEmit": false,
