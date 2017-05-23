@@ -1,6 +1,6 @@
 {
   "name": "stepwise",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "scripts": {
     "build": "npm run clean && npm run ngc && npm run bundle && npm run copy-metadata",
