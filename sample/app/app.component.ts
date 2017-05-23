@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +6,14 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent {
-  title = 'app works!';
+export class AppComponent implements OnInit {
+  public currentPage: number;
+
+  public ngOnInit() {
+    this.currentPage = 0;
+  }
+
+  public handlePageChange(page) {
+    this.currentPage = page;
+  }
 }

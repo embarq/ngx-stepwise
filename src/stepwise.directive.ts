@@ -3,6 +3,8 @@ import {
   AfterContentInit,
   ContentChildren,
   Directive,
+  EventEmitter,
+  Output,
   QueryList
 } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
@@ -18,7 +20,12 @@ export class StepwiseDirective implements AfterViewInit, AfterContentInit {
   @ContentChildren(StepwiseStepDirective)
   public steps: QueryList<StepwiseStepDirective>;
 
-  constructor() { }
+  @Output('pageChange')
+  public pageChange: EventEmitter<number>;
+
+  constructor() {
+    this.pageChange = new EventEmitter<number>(true);
+  }
 
   private handlePageChange(pageChange: PageChange) {
     const steps = this.steps.toArray();
@@ -28,13 +35,14 @@ export class StepwiseDirective implements AfterViewInit, AfterContentInit {
     if (pageTransition >= 0 && pageTransition < steps.length) {
       steps[currentPage].isVisible = false;
       steps[pageTransition].isVisible = true;
+      this.pageChange.emit(pageTransition);
     }
   }
 
   public ngAfterViewInit() {
     Observable.merge
       .apply(Observable, this.steps.map(stepDirective => stepDirective.pageChange))
-      .subscribe(page => this.handlePageChange(page));
+      .subscribe(pageChange => this.handlePageChange(pageChange));
   }
 
   public ngAfterContentInit() {

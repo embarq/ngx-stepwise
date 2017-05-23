@@ -1,4 +1,6 @@
-<div stepwise-container>
+<div stepwise-container (pageChange)="handlePageChange($event)">
+
+  <h2>Current page: {{ currentPage }}</h2>
 
   <div stepwise-step>
     <h1>Step 1</h1>
@@ -15,6 +17,5 @@
     <h1>Step 3</h1>
     <button [stepwisePrev]="true">Prev</button>
   </div>
-
 
 </div>
